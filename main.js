@@ -6,18 +6,28 @@ const products = [
   },
   {
     name: "Cadeira Gamer  RGB - Preta com Iluminação (Led)",
-    price: "4.499,90",
+    price: "959,90",
+    preview: "product-image-cadeira.jpg",
+  },
+  {
+    name: "Teclado Gamer Mecânico Low Profile RGB AW510K 580",
+    price: "1.002,00",
     preview: "product-image-teclado.jpg",
   },
   {
-    name: "Tecladp Gamer  RGB - Preta com Iluminação (Led)",
-    price: "1.499,90",
-    preview: "product-image-cadeira.jpg",
+    name: "Headset Gamer RGB Preto",
+    price: "99,90",
+    preview: "product-image-headset.jpg",
+  },
+  {
+    name: "Patinho De Borracha Para Banho",
+    price: "19,90",
+    preview: "product-image-patinho.jpg"
   }
-];
+]
 
 window.addEventListener("load", () => {
-    const middle = document.querySelector('.middle')
+    const productsWrapper = document.querySelector('.products-wrapper')
 
     products.map((product) => {
         const productCard = document.createElement("div");
@@ -53,9 +63,10 @@ window.addEventListener("load", () => {
         </div>
             `
 
-        middle.appendChild(productCard)
+        productsWrapper.appendChild(productCard)
         stepper(productCard, product)
         updateTotalPrice()
+        limitCharacters(productCard);
     })
 })
 
@@ -144,3 +155,17 @@ closeInputWrapperBtn.addEventListener('click', (e) => {
     inputWrapper.style.display = 'none'
 })
 
+function limitCharacters(productCard) {
+    const productsName = productCard.querySelectorAll('.product-name');
+    const limit = 50
+
+    productsName.forEach(productName => {
+        const text = productName.textContent.trim();
+        const dots = '...';
+
+        if (text.length > limit) {
+            const productNameFormatted = text.substring(0, limit - dots.length) + dots;
+            productName.textContent = productNameFormatted;
+        }
+    })
+}
