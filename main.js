@@ -46,8 +46,8 @@ window.addEventListener("load", () => {
                 ${product.name}
             </h2>
 
-            <div class="flex">
-            <p class="product-price">R$ ${product.price}</p>
+            <div class="price-wrapper">
+            <p class="product-price bold">R$ ${product.price}</p>
             <div class="stepper">
                 <button class="btn btn-left">
                     <img src="./assets/minus.svg" alt="Botão de subtração" />
