@@ -164,7 +164,7 @@ closeInputWrapperBtn.addEventListener('click', (e) => {
 
 function limitCharacters(productCard) {
     const productsName = productCard.querySelectorAll('.product-name');
-    const limit = 50
+    let limit = window.matchMedia("(max-width:500px)").matches ? 76 : 50
 
     productsName.forEach(productName => {
         const text = productName.textContent.trim();
