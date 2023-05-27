@@ -3,26 +3,31 @@ const products = [
     name: "Monitor Gamer Curvo 49 DQHD, 240Hz, 1ms, HDMI e DisplayPort, HDR 1000, FreeSync Premium, Ajuste de Altura",
     price: "8.599,90",
     preview: "product-image-monitor.jpg",
+    alt: "Imagem de um monitor gamer curvo"
   },
   {
     name: "Cadeira Gamer  RGB - Preta com Iluminação (Led)",
     price: "959,90",
     preview: "product-image-cadeira.jpg",
+    alt: "Imagem de uma cadeira gamer RGB"
   },
   {
     name: "Teclado Gamer Mecânico Low Profile RGB AW510K 580",
     price: "1.002,00",
     preview: "product-image-teclado.jpg",
+    alt: "Imagem de um teclado gamer mecânico"
   },
   {
     name: "Headset Gamer RGB Preto",
     price: "99,90",
     preview: "product-image-headset.jpg",
+    alt: "Imagem de um headset gamer RGB preto"
   },
   {
     name: "Patinho De Borracha Para Banho",
     price: "19,90",
-    preview: "product-image-patinho.jpg"
+    preview: "product-image-patinho.jpg",
+    alt: "Imagem de um patinho de borracha para banho"
   }
 ]
 
@@ -37,7 +42,7 @@ window.addEventListener("load", () => {
         <div class="product-image">
             <img
                 src="./assets/${product.preview}"
-                alt="Imagem de um monitor gamer "
+                alt="${product.alt}"
             />
         </div>
 
