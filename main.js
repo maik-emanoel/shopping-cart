@@ -133,7 +133,9 @@ function updateTotalPrice() {
     })
 
     totalPriceElement.textContent = totalPrice.toLocaleString('pt-br', {
-        minimumFractionDigits: 2
+        minimumFractionDigits: 2,
+        currency: 'BRL',
+        style: 'currency'
     })
 }
 
@@ -169,3 +171,28 @@ function limitCharacters(productCard) {
         }
     })
 }
+
+const checkout = document.querySelector('.checkout')
+
+const secondsTofinishLoading = 2500 // 2.5 seconds
+const secondsToMessageDisappear = 5000 // 5 seconds
+
+checkout.addEventListener('click', () => {
+    const successfulMsg = document.querySelector('#successful-message')
+
+    checkout.innerHTML = `
+    <img src="./assets/spinner.svg" alt="Ícone de loading" />
+    `
+    checkout.classList.add('loading')
+
+    setTimeout(() => {
+        checkout.classList.remove('loading')
+        checkout.innerHTML = 'Finalizar compra'
+        successfulMsg.style.display = 'initial'
+        
+    }, secondsTofinishLoading)
+
+    setTimeout(() => {
+        successfulMsg.style.display = 'none'
+    }, secondsToMessageDisappear)
+})
