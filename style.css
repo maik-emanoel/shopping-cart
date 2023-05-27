@@ -351,3 +351,33 @@ body {
         transform: translateX(60%);
     }
 }
+
+@media (max-width: 500px) {
+    :root {
+        font-size: 50%;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    #app {
+        margin: 0;
+        max-height: none;
+        max-width: none;
+    }
+
+    .product-name {
+        line-height: 150%;
+    }
+
+    #successful-message {
+        width: 90%;
+    }
+}
+
+@media (max-width: 340px) {
+    .product-price {
+        font-size: 1.2rem;
+    }
+}
