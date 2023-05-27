@@ -196,3 +196,29 @@ checkout.addEventListener('click', () => {
         successfulMsg.style.display = 'none'
     }, secondsToMessageDisappear)
 })
+
+const closeCartItemsBtn = document.querySelector('.top img')
+const app = document.querySelector('#app')
+
+closeCartItemsBtn.addEventListener('click', (e) => {
+    e.stopPropagation()
+    const showItemsCartBtn = document.createElement('div')
+    showItemsCartBtn.classList.add('show-cart-items-btn')
+
+    showItemsCartBtn.innerHTML = `
+    <img src="./assets/shopping-cart.svg" alt="Ícone de carrinho de compras" />
+    <p>Clique aqui para acessar seu carrinho</p>
+    `
+
+    document.body.appendChild(showItemsCartBtn)
+    document.body.removeChild(app)
+
+    showItemsCart(showItemsCartBtn)
+})
+
+function showItemsCart(showItemsCartBtn) {
+    showItemsCartBtn.addEventListener('click', () => {
+        document.body.appendChild(app)
+        document.body.removeChild(showItemsCartBtn)
+    })
+}
