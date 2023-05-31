@@ -211,8 +211,11 @@ closeCartItemsBtn.addEventListener('click', (e) => {
     showItemsCartBtn.classList.add('show-cart-items-btn')
 
     showItemsCartBtn.innerHTML = `
-    <img src="./assets/shopping-cart.svg" alt="Ícone de carrinho de compras" />
-    <p>Clique aqui para acessar seu carrinho</p>
+        <img 
+            src="./assets/shopping-cart.svg" 
+            alt="Ícone de carrinho de compras" 
+            title="Clique aqui para acessar seu carrinho" 
+        />
     `
 
     document.body.appendChild(showItemsCartBtn)
